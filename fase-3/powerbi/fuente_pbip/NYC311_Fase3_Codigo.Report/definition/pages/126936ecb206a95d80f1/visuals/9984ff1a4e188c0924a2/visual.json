@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "9984ff1a4e188c0924a2",
+  "position": {
+    "x": 952,
+    "y": 630,
+    "width": 936,
+    "height": 360,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_solicitudes_segmentadas"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "bi vw_solicitudes_segmentadas.status",
+              "nativeQueryRef": "status",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_solicitudes_segmentadas"
+                    }
+                  },
+                  "Property": "Solicitudes distintas"
+                }
+              },
+              "queryRef": "bi vw_solicitudes_segmentadas.Solicitudes distintas",
+              "nativeQueryRef": "Solicitudes distintas"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Solicitudes por estado operativo · recuento'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

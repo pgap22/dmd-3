@@ -1,0 +1,20 @@
+[project]
+name = "dmd-fase2-nyc311"
+version = "0.1.0"
+description = "Fase 2 de minería de datos y descubrimiento de conocimiento para NYC311"
+requires-python = ">=3.11"
+dependencies = [
+  "jupyter>=1.0,<2",
+  "matplotlib>=3.8,<4",
+  "nbformat>=5.9,<6",
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<3",
+  "pyodbc>=5.1,<6",
+  "python-docx>=1.1,<2",
+  "reportlab>=4.2,<5",
+  "scikit-learn>=1.4,<2",
+  "seaborn>=0.13,<1",
+]
+
+[tool.uv]
+package = false

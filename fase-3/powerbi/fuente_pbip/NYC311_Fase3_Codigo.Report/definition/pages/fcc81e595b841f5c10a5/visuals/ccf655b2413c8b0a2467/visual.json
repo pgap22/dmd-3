@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ccf655b2413c8b0a2467",
+  "position": {
+    "x": 1312,
+    "y": 350,
+    "width": 576,
+    "height": 690,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "map",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_solicitudes_segmentadas"
+                    }
+                  },
+                  "Property": "borough"
+                }
+              },
+              "queryRef": "bi vw_solicitudes_segmentadas.borough",
+              "nativeQueryRef": "borough",
+              "active": true
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_solicitudes_segmentadas"
+                    }
+                  },
+                  "Property": "Solicitudes distintas"
+                }
+              },
+              "queryRef": "bi vw_solicitudes_segmentadas.Solicitudes distintas",
+              "nativeQueryRef": "Solicitudes distintas"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Distribución geoespacial por distrito (borough) · recuento'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+-- Medidas para la tabla importada bi.vw_solicitudes_segmentadas.
+-- Ajustar el nombre de tabla según el nombre elegido en Power BI Desktop.
+
+Solicitudes = DISTINCTCOUNT(SolicitudesBI[codigo_solicitud])
+
+Solicitudes con tiempo =
+CALCULATE(
+    [Solicitudes],
+    NOT ISBLANK(SolicitudesBI[minutos_resolucion])
+)
+
+Sin tiempo observado =
+CALCULATE(
+    [Solicitudes],
+    ISBLANK(SolicitudesBI[minutos_resolucion])
+)
+
+Demoras altas observadas =
+CALCULATE(
+    [Solicitudes],
+    SolicitudesBI[demora_alta] = 1
+)
+
+Porcentaje de demora alta observada =
+DIVIDE([Demoras altas observadas], [Solicitudes con tiempo])
+
+Mediana de resolución (horas) =
+DIVIDE(MEDIAN(SolicitudesBI[minutos_resolucion]), 60)
+
+Solicitudes segmentadas =
+CALCULATE([Solicitudes], SolicitudesBI[es_segmentado] = TRUE())
+
+Solicitudes fuera de perfil =
+CALCULATE([Solicitudes], SolicitudesBI[es_segmentado] = FALSE())
+
+Porcentaje segmentado =
+DIVIDE([Solicitudes segmentadas], [Solicitudes])

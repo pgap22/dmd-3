@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ce3db9dd72fa2c2fbba8",
+  "position": {
+    "x": 952,
+    "y": 220,
+    "width": 936,
+    "height": 390,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_solicitudes_segmentadas"
+                    }
+                  },
+                  "Property": "borough"
+                }
+              },
+              "queryRef": "bi vw_solicitudes_segmentadas.borough",
+              "nativeQueryRef": "borough",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_solicitudes_segmentadas"
+                    }
+                  },
+                  "Property": "Mediana minutos observados"
+                }
+              },
+              "queryRef": "bi vw_solicitudes_segmentadas.Mediana minutos observados",
+              "nativeQueryRef": "Mediana minutos observados"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Mediana observada por distrito (borough) · minutos de resolución'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

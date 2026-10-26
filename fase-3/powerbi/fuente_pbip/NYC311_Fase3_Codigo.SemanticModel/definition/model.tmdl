@@ -1,0 +1,22 @@
+model Model
+	culture: es-SV
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-SV
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["bi vw_solicitudes_segmentadas"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'bi vw_solicitudes_segmentadas'
+ref table DateTableTemplate_f802d018-7087-46e2-ad91-8cd997ea3855
+ref table LocalDateTable_348a8954-04c4-48ee-8723-0c4fc8de9be7
+ref table LocalDateTable_fd7004f5-6f1f-41dc-8943-c254685d8ae3
+
+ref cultureInfo es-SV
+

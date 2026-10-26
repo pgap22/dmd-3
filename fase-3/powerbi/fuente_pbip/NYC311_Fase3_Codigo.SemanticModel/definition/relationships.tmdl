@@ -1,0 +1,10 @@
+relationship c8911512-d111-441e-a0bd-ae90058d7ea0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'bi vw_solicitudes_segmentadas'.modelo_periodo_inicio
+	toColumn: LocalDateTable_348a8954-04c4-48ee-8723-0c4fc8de9be7.Date
+
+relationship 0b4e6e3f-7c7f-4c30-860f-38d553e22080
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'bi vw_solicitudes_segmentadas'.modelo_periodo_fin
+	toColumn: LocalDateTable_fd7004f5-6f1f-41dc-8943-c254685d8ae3.Date
+

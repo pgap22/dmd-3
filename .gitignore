@@ -1,0 +1,37 @@
+# Entornos y archivos temporales
+.venv/
+__pycache__/
+*.pyc
+**/.vs/
+**/bin/
+**/obj/
+*.user
+tmp/
+qa/
+qa/renders/
+qa/screenshots/
+
+# Datos grandes o credenciales locales
+*.bak
+*.log
+*.dmp
+*.exe
+*.zip
+*.csv
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+
+# Power BI caches y copias temporales
+**/.pbi/
+*.chart-data-*/
+.chart-data-*/
+.codex-finalizer/
+*.pbix~
+*.before_*.pbix
+*.accidental
+
+# Secretos locales
+.env
+*.secrets.*

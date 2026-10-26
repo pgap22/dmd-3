@@ -1,0 +1,287 @@
+table 'bi vw_solicitudes_segmentadas'
+	lineageTag: 88168b52-49cf-4a31-a2cf-853ecd03b78c
+
+	column codigo_solicitud
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e5fc613-e808-4927-840a-b5f23fd7287d
+		summarizeBy: sum
+		sourceColumn: codigo_solicitud
+
+		annotation SummarizationSetBy = Automatic
+
+	column agency
+		dataType: string
+		lineageTag: b0144c04-8a1e-4e72-83ed-3064337626e1
+		summarizeBy: none
+		sourceColumn: agency
+
+		annotation SummarizationSetBy = Automatic
+
+	column complaint_type
+		dataType: string
+		lineageTag: 2da14ef9-d46a-4097-a023-ff87349aff08
+		summarizeBy: none
+		sourceColumn: complaint_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column borough
+		dataType: string
+		lineageTag: 743c05f1-5039-4735-b6a3-2645d7d69179
+		summarizeBy: none
+		sourceColumn: borough
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 92a4953e-07ad-40ee-b031-68143ffad69a
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_data_channel_type
+		dataType: string
+		lineageTag: cf605d21-ea8f-4da3-aca3-a660d47ad855
+		summarizeBy: none
+		sourceColumn: open_data_channel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: de943bc7-c24e-416b-bcf8-023e67b83e46
+		summarizeBy: sum
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ed2b9da-cda0-4d2c-98a0-246bd8633664
+		summarizeBy: sum
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_semana
+		dataType: int64
+		formatString: 0
+		lineageTag: 0caff2c6-ea98-44a3-a7d8-561b7edc8b1b
+		summarizeBy: sum
+		sourceColumn: dia_semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutos_resolucion
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e88a33b-8d90-41e3-9252-58fb8a05d8ca
+		summarizeBy: sum
+		sourceColumn: minutos_resolucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column demora_alta
+		dataType: int64
+		formatString: 0
+		lineageTag: e8a9f7bf-cc97-4edf-be56-f8d6ab275baa
+		summarizeBy: sum
+		sourceColumn: demora_alta
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 23c0ad0d-a875-49dc-a129-0cafb1baa000
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: eaff1aae-5322-455f-9d7a-eeacd399a9bb
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cluster_id_original
+		dataType: int64
+		formatString: 0
+		lineageTag: df9597d2-4782-4109-bd13-956f597d6d22
+		summarizeBy: sum
+		sourceColumn: cluster_id_original
+
+		annotation SummarizationSetBy = Automatic
+
+	column cluster_nombre_modelado
+		dataType: string
+		lineageTag: e11373b9-1c7d-47df-ab55-a4548e9ba437
+		summarizeBy: none
+		sourceColumn: cluster_nombre_modelado
+
+		annotation SummarizationSetBy = Automatic
+
+	column cluster_nombre
+		dataType: string
+		lineageTag: 692dd9dc-c547-423b-9db7-07ed381d9db1
+		summarizeBy: none
+		sourceColumn: cluster_nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_segmentado
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2c2dc38c-6b80-43f2-94b9-0c34ed1e148f
+		summarizeBy: none
+		sourceColumn: es_segmentado
+
+		annotation SummarizationSetBy = Automatic
+
+	column solicitudes_perfil
+		dataType: int64
+		formatString: 0
+		lineageTag: 563dde8f-0cf4-42c7-91df-17bc072de816
+		summarizeBy: sum
+		sourceColumn: solicitudes_perfil
+
+		annotation SummarizationSetBy = Automatic
+
+	column resueltas_perfil
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b3ad4c4-0c6f-46e7-b913-4e28f0e2cc12
+		summarizeBy: sum
+		sourceColumn: resueltas_perfil
+
+		annotation SummarizationSetBy = Automatic
+
+	column mediana_resolucion_perfil
+		dataType: double
+		lineageTag: 692ca462-687a-4995-8645-8cf7efe0676b
+		summarizeBy: sum
+		sourceColumn: mediana_resolucion_perfil
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column promedio_resolucion_perfil
+		dataType: double
+		lineageTag: c5401782-42dd-4b21-bdff-e7f42867aa38
+		summarizeBy: sum
+		sourceColumn: promedio_resolucion_perfil
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column porcentaje_demora_perfil
+		dataType: double
+		lineageTag: 5c9bef54-2ac7-4860-b7df-45bdca532338
+		summarizeBy: sum
+		sourceColumn: porcentaje_demora_perfil
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column porcentaje_sin_resolucion_perfil
+		dataType: double
+		lineageTag: 5d4613fa-4506-4f4d-a7a4-f77a34906b02
+		summarizeBy: sum
+		sourceColumn: porcentaje_sin_resolucion_perfil
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column modelo_version
+		dataType: string
+		lineageTag: 962ee99a-1d5b-4817-b640-bdda978094a6
+		summarizeBy: none
+		sourceColumn: modelo_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column modelo_periodo_inicio
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8d7c5e92-e0b2-4e89-8b3b-775c4c810c6f
+		summarizeBy: none
+		sourceColumn: modelo_periodo_inicio
+
+		variation Variation
+			isDefault
+			relationship: c8911512-d111-441e-a0bd-ae90058d7ea0
+			defaultHierarchy: LocalDateTable_348a8954-04c4-48ee-8723-0c4fc8de9be7.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column modelo_periodo_fin
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0d44afd2-4a10-4e8b-8115-eea641a6479d
+		summarizeBy: none
+		sourceColumn: modelo_periodo_fin
+
+		variation Variation
+			isDefault
+			relationship: 0b4e6e3f-7c7f-4c30-860f-38d553e22080
+			defaultHierarchy: LocalDateTable_fd7004f5-6f1f-41dc-8943-c254685d8ae3.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	measure 'Solicitudes distintas' = DISTINCTCOUNT('bi vw_solicitudes_segmentadas'[codigo_solicitud])
+		formatString: #,##0
+
+	measure 'Solicitudes con tiempo' = CALCULATE([Solicitudes distintas], NOT ISBLANK('bi vw_solicitudes_segmentadas'[minutos_resolucion]))
+		formatString: #,##0
+
+	measure 'Solicitudes sin duración' = CALCULATE([Solicitudes distintas], ISBLANK('bi vw_solicitudes_segmentadas'[minutos_resolucion]))
+		formatString: #,##0
+
+	measure 'Solicitudes con demora alta' = COALESCE(SUM('bi vw_solicitudes_segmentadas'[demora_alta]), 0)
+		formatString: #,##0
+
+	measure 'Tasa demora alta' = DIVIDE([Solicitudes con demora alta], [Solicitudes con tiempo])
+		formatString: 0.0%
+
+	measure 'Mediana minutos observados' = MEDIAN('bi vw_solicitudes_segmentadas'[minutos_resolucion])
+		formatString: #,##0
+
+	measure 'Solicitudes segmentadas' = CALCULATE([Solicitudes distintas], 'bi vw_solicitudes_segmentadas'[es_segmentado] = TRUE)
+		formatString: #,##0
+
+	measure 'Solicitudes fuera de perfil' = CALCULATE([Solicitudes distintas], 'bi vw_solicitudes_segmentadas'[es_segmentado] = FALSE)
+		formatString: #,##0
+
+	measure 'Porcentaje segmentado' = DIVIDE([Solicitudes segmentadas], [Solicitudes distintas])
+		formatString: 0.0%
+
+	partition 'bi vw_solicitudes_segmentadas' = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("localhost", "DW_NYC311"),
+				    bi_vw_solicitudes_segmentadas = Origen{[Schema="bi",Item="vw_solicitudes_segmentadas"]}[Data]
+				in
+				    bi_vw_solicitudes_segmentadas
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,352 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c8001468-e434-4eb9-a984-6509564da23b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DW NYC311</ID>
+  <Name>DW NYC311</Name>
+  <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T08:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="13d7e334-af2a-4247-b253-609c3146714e">
+      <ID>Fecha Creacion</ID>
+      <Name>Fecha Creacion</Name>
+      <DimensionID>Dim Fecha</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="0a63479e-7753-4d11-a1ac-b675c016d774">
+          <AttributeID>Fecha Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5c2c141b-06fc-4a9f-a62a-ba8df3635d92">
+          <AttributeID>Fecha</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1ede5b62-81f0-4e6a-bbed-62ebcbbab65b">
+          <AttributeID>Anio</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f6497a70-dee3-4880-85a1-d44af348182d">
+          <AttributeID>Trimestre</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bfd62cff-84d1-4599-9b23-8f65cd92c8ed">
+          <AttributeID>Mes</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="e15f43e2-782a-44eb-8619-04ba64fa9539">
+      <ID>Dim Canal</ID>
+      <Name>Dim Canal</Name>
+      <DimensionID>Dim Canal</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="c327d353-9ab8-4e27-b245-9c20206d71dd">
+          <AttributeID>Canal Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="a6622204-885c-4eab-ad7d-1bf73084a2d1">
+      <ID>Dim Geografia</ID>
+      <Name>Dim Geografia</Name>
+      <DimensionID>Dim Geografia</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="3d04a551-28cc-4aee-87b7-d1f5b5906208">
+          <AttributeID>Geografia Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2da875fd-1056-41b9-b3e7-8e0d0b057135">
+      <ID>Dim Problema</ID>
+      <Name>Dim Problema</Name>
+      <DimensionID>Dim Problema</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="5f5e953d-8172-4c8c-9585-68e0eba98069">
+          <AttributeID>Problema Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="bcdfbd37-168f-4f67-9f87-d31bd6426417">
+      <ID>Dim Agencia</ID>
+      <Name>Dim Agencia</Name>
+      <DimensionID>Dim Agencia</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="5e74634e-6e03-4b2c-83af-61cc68b62200">
+          <AttributeID>Agencia Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="26365cb3-d42d-4724-a897-17614f551dc5">
+          <AttributeID>Agency Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="45848cc6-614b-45b1-a0fd-3a1bbd2a7108">
+          <AttributeID>Agency</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c7d3cf84-ddd6-4663-a49d-0c8edd3662dd">
+      <ID>Dim Estado</ID>
+      <Name>Dim Estado</Name>
+      <DimensionID>Dim Estado</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b591f9f0-c84e-4d1e-818d-3b7c13b5aa50">
+          <AttributeID>Estado Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c159b1a3-8565-4c38-9776-495519c3f3cb">
+      <ID>Fecha Cierre</ID>
+      <Name>Fecha Cierre</Name>
+      <DimensionID>Dim Fecha</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="177a0399-90d3-4214-becb-530814aa583a">
+          <AttributeID>Fecha Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5ac264ea-afdc-45bf-bce5-30e656e246d0">
+          <AttributeID>Fecha</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="40c550f2-63df-4720-8453-a3ba2075c9c4">
+          <AttributeID>Anio</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="89d71248-98c8-4805-88b5-cc0efc92b724">
+          <AttributeID>Trimestre</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b920ea6a-19f3-4d9a-a6df-6aa93144c692">
+          <AttributeID>Mes</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="c3d468a6-3554-4433-8c78-e7d51becec29">
+      <ID>Fact Solicitud</ID>
+      <Name>Fact Solicitud</Name>
+      <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T08:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="627f5bde-c999-45ab-9afd-ffbad47a0a0b">
+          <ID>Codigo Solicitud</ID>
+          <Name>Codigo Solicitud</Name>
+          <Source dwd:design-time-name="46cce211-7d09-4e3a-b382-999f2695254d">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="61ee697f-8148-46dd-8f6b-605f2aacdb12">
+              <TableID>dw_FactSolicitud</TableID>
+              <ColumnID>codigo_solicitud</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b6824453-92b6-4353-92e5-8b5225befbab">
+          <ID>Minutos Resolucion</ID>
+          <Name>Minutos Resolucion</Name>
+          <Source dwd:design-time-name="31a3dd5b-5e4f-4725-be09-05f54b1f3420">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a1ef9008-8ad8-4418-a24b-b6967024e0fd">
+              <TableID>dw_FactSolicitud</TableID>
+              <ColumnID>minutos_resolucion</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="592d43b1-c9c8-4a28-ba7b-81e3080ed60a">
+          <ID>Latitude</ID>
+          <Name>Latitude</Name>
+          <Source dwd:design-time-name="38a96229-435e-4974-bdfa-b8ac666ee54b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1b5648e3-9351-476b-bd97-8828037c3144">
+              <TableID>dw_FactSolicitud</TableID>
+              <ColumnID>latitude</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8dad6187-0c0e-4097-9a75-ffc6e2053e5a">
+          <ID>Longitude</ID>
+          <Name>Longitude</Name>
+          <Source dwd:design-time-name="f9c92f3f-9ca2-4f7c-a630-e8e32dc28117">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e81d1e82-da63-4763-8f58-30205c11f911">
+              <TableID>dw_FactSolicitud</TableID>
+              <ColumnID>longitude</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f2a865c7-5a0b-4a4e-b695-c5b431287f6a">
+          <ID>Fact Solicitud Count</ID>
+          <Name>Fact Solicitud Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="39f59350-182c-4854-bf0a-898a7b9cb9e5">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="319b6c8c-1994-40f3-8c2b-94b44fd3ee6d">
+              <TableID>dw_FactSolicitud</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ea5dd4ef-9119-47c3-8dce-b27a5cbd0a89">
+          <CubeDimensionID>Fecha Creacion</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7b03d3c1-9e44-4b93-a5fa-eaa6f9c4d251">
+              <AttributeID>Fecha Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="69520f5e-d538-45d8-a67e-e217ea4d0731">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="15aaf127-3c24-4cd4-9768-0928a0a8d17b">
+                    <TableID>dw_FactSolicitud</TableID>
+                    <ColumnID>fecha_creacion_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="989dc70b-b54b-4268-8d3c-b8c0fdef96e6">
+          <CubeDimensionID>Dim Canal</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="15fac152-cb40-4404-aa61-686c5e539edf">
+              <AttributeID>Canal Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="864efa68-b5ae-4fa4-a8ad-413337b41c6e">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d934acbf-1ec1-44f4-9bf2-42608c6562e4">
+                    <TableID>dw_FactSolicitud</TableID>
+                    <ColumnID>canal_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="26b3d762-f5a0-45e4-a6a7-7df918df46e9">
+          <CubeDimensionID>Dim Geografia</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bf06809f-36f5-4cec-89ec-086cf97f9a8f">
+              <AttributeID>Geografia Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5567dec0-8cba-439f-9082-8976928ca913">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="85ca3ce7-a8f7-422d-81e7-f493ba2baa51">
+                    <TableID>dw_FactSolicitud</TableID>
+                    <ColumnID>geografia_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3710ab06-64d0-4ed3-9e91-63b47d728317">
+          <CubeDimensionID>Dim Problema</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="3060774b-5908-4ec0-b62a-55bf4216d50d">
+              <AttributeID>Problema Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f62aa5fd-98f8-417d-a649-ed7e9063237a">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="71411fb6-476b-45fe-990a-42b9c6dcf82f">
+                    <TableID>dw_FactSolicitud</TableID>
+                    <ColumnID>problema_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2c0a6e75-1255-4364-bb9c-2a82f3dd5dcb">
+          <CubeDimensionID>Dim Agencia</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0f669336-503e-47d1-9170-9c1589fb5096">
+              <AttributeID>Agencia Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5ae716eb-2c85-4eee-b15c-a4dbbbd1e5ef">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="af2ecffe-803c-45b6-a57b-2c93ae911e5f">
+                    <TableID>dw_FactSolicitud</TableID>
+                    <ColumnID>agencia_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c66b3ad2-af75-4584-8e58-ec7cf0908adc">
+          <CubeDimensionID>Dim Estado</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="15f42fe1-f16d-4cce-883b-08a6d5a49ae3">
+              <AttributeID>Estado Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3bd0e2e2-f075-4905-9889-5619140f9d9a">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="092aa639-9854-4f95-8ffd-5f26041cdb22">
+                    <TableID>dw_FactSolicitud</TableID>
+                    <ColumnID>estado_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6d749150-3405-467f-b741-17a9d95312e5">
+          <CubeDimensionID>Fecha Cierre</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d7e3eb49-78a7-4be9-8136-3fff3f87cef1">
+              <AttributeID>Fecha Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0c103f17-270b-477e-9d99-cf640a78546d">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="76ffccff-1b15-4c4a-ac56-071a8a93646b">
+                    <TableID>dw_FactSolicitud</TableID>
+                    <ColumnID>fecha_cierre_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="5f829881-9fb3-4281-a456-2403c3cf453c">
+    <DataSourceViewID>DW NYC311</DataSourceViewID>
+  </Source>
+</Cube>

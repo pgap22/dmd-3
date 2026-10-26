@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "NYC311_Fase3_Codigo"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b28144af-29a0-4e2c-acb5-13e607d09f24"
+  }
+}
