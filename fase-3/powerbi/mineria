@@ -1,4 +1,0 @@
-﻿cluster_id_original;cluster_nombre;perfiles;solicitudes;mediana_resolucion;porcentaje_demora;porcentaje_sin_resolucion
-0;Resolución rápida y baja demora;206;899050;143.0;0.08936203141450932;0.013241627466221158
-1;Resolución prolongada y alta demora;245;351275;11376.0;0.7109413925295636;0.06085603626360452
-2;Rezago crítico y alta proporción sin resolver;29;29467;33150.0;0.79104256459773;0.8271675889624296
