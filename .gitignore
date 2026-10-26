@@ -7,7 +7,17 @@ __pycache__/
 **/obj/
 *.user
 tmp/
-qa/
+qa/*
+!qa/fase3/
+qa/fase3/*
+!qa/fase3/source/
+qa/fase3/source/*
+!qa/fase3/source/build_documento_fase3.py
+!qa/fase3/source/build_presentation.mjs
+!qa/fase3/source/Documento_Fase3.docx
+!qa/fase3/source/Documento_Fase3.pdf
+!qa/fase3/source/Presentacion_Fase3_NYC311.pptx
+!qa/fase3/source/Presentacion_Fase3_NYC311.pdf
 qa/renders/
 qa/screenshots/
 

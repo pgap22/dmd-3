@@ -1,7 +1,7 @@
 # Guion de defensa oral — Fase 3 NYC311
 
 Duración total máxima: **25 minutos** (23 minutos de exposición estructurada + 2 minutos de margen / preguntas del tribunal).
-Diapositivas de apoyo: `fase-3/Presentacion_Fase3_NYC311.pptx` (12 diapositivas ejecutivas).
+Diapositivas de apoyo: `fase-3/Presentacion_Fase3_NYC311.pptx` (13 diapositivas ejecutivas, formato pitch).
 Informe interactivo: `fase-3/powerbi/NYC311_Fase3_Final.pbix`.
 Documento académico: `fase-3/Documento_Fase3.docx` (y `Documento_Fase3.pdf`).
 
@@ -17,7 +17,7 @@ Documento académico: `fase-3/Documento_Fase3.docx` (y `Documento_Fase3.pdf`).
 | **7:00–11:00** | Slide 6–7 | Fase 2: Minería de Datos (KDD) | Proceso KDD con Scikit-learn (Pedregosa et al., 2011). Árbol CART: variables sin fuga, Recall 95.15%, F1 78.37%, ROC-AUC 0.952 en test del snapshot F2. K-Means: 480 perfiles en F2 original y 481 en la publicación BI actual, siempre sobre `agencia+tipo+borough`. |
 | **11:00–18:00** | Slide 8–10 | Fase 3: Demostración en vivo de Power BI | Abrir `powerbi/NYC311_Fase3_Final.pbix` en Power BI Desktop. Recorrer las 3 páginas 16:9; demostrar slicers y aislamiento de solicitudes `Sin perfil K-Means` (14,310), sin presentar un drilldown territorial no comprobado como cifra fija. |
 | **18:00–20:30** | Slide 11 | Costos, Viabilidad y FinOps | Marco CAPEX/OPEX (Horngren et al., 2012): CAPEX US$4,520 + OPEX anual US$4,200 (TCO 3 años = US$17,120). Marco Ross et al. (2019): beneficio por horas de reportería evitadas (tarifa US$18/h), ROI escenario base 162.4% (payback mes 14). Es un escenario, no ahorro observado. |
-| **20:30–23:00** | Slide 12 | Cierre, límites y marco ético | Tres decisiones defendibles; gobernanza, no causalidad, cobertura actual y supervisión humana. |
+| **20:30–23:00** | Slides 12–13 | Cierre, límites y respaldo | Tres decisiones defendibles; gobernanza, no causalidad, cobertura actual y supervisión humana. La diapositiva 13 queda como respaldo bibliográfico. |
 | **23:00–25:00** | — | Margen y Preguntas del Tribunal | Ronda de preguntas técnicas del docente / tribunal evaluador. |
 
 ---
