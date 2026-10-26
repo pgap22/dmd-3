@@ -13,26 +13,26 @@ Este repositorio contiene la entrega final de la Fase 2. La raíz se dejó delib
 
 ## Qué se analizó
 
-Se trabajó con **1,293,816 solicitudes de NYC311**, registradas entre abril y julio de 2026. El análisis responde dos preguntas:
+La ejecución actual consulta **1,312,465 solicitudes de NYC311** directamente desde `mining.vw_dataset_fase2`, con registros disponibles entre enero y julio de 2026 (enero y abril–julio). El análisis responde dos preguntas:
 
 1. ¿Qué solicitudes tienen mayor probabilidad de terminar con demora alta?
 2. ¿Qué perfiles operativos combinan volumen, demora y falta de resolución?
 
-La demora alta se define con el percentil 75 del tiempo observado: **4,329 minutos**, aproximadamente 72 horas. Los 63,079 casos sin tiempo final permanecen sin clasificar para no inventar una duración todavía desconocida.
+La etiqueta `demora_alta` conserva el umbral histórico de Fase 2: **4,329 minutos**, aproximadamente 72 horas. En el rango completo hay 63,467 casos sin tiempo final; permanecen sin clasificar para no inventar una duración todavía desconocida.
 
 ## Resultados que conviene defender
 
-- Árbol de Decisión optimizado: **Recall 95.15%**, **F1 78.37%** y **ROC-AUC 0.952**.
+- Referencia del Árbol de Decisión optimizado en la prueba F2 original (abril–julio): **Recall 95.15%**, **F1 78.37%** y **ROC-AUC 0.952**.
 - El modelo detectó **58,549** demoras reales y dejó **2,982** demoras sin alerta.
 - Agencia y tipo de reclamo concentran la mayor importancia predictiva; esto **no demuestra causalidad**.
-- K-Means seleccionó **K = 3**, con Silhouette **0.421**, una separación útil pero moderada.
+- La publicación actual de K-Means selecciona **K = 3** sobre **481 perfiles**, con Silhouette documentada por la ejecución del notebook; la separación debe interpretarse como útil pero moderada.
 - Los tres perfiles encontrados son: resolución rápida, resolución prolongada y rezago crítico.
 
 La recomendación principal es usar el árbol como filtro de priorización con revisión humana, no como decisión automática. Los grupos de K-Means sirven para orientar dónde investigar y asignar capacidad.
 
 ## Cómo ejecutar el notebook
 
-El notebook fuente consulta únicamente SQL Server `DW_NYC311`, vista `mining.vw_dataset_fase2`, usando autenticación Windows. El período del notebook queda fijado a abril–julio de 2026 para mantener el corte académico validado.
+El notebook fuente consulta únicamente SQL Server `DW_NYC311`, vista `mining.vw_dataset_fase2`, usando autenticación Windows. No fija un período manual: calcula el rango mínimo y máximo disponible y publica la versión resultante en `bi.PerfilCluster`.
 
 Para la conexión local se necesita el controlador ODBC de Microsoft para SQL Server. El notebook detecta ODBC Driver 18 o 17 y usa `localhost`/`DW_NYC311`. Si se definen `DB_USER` y `DB_PASSWORD`, usa autenticación SQL; de lo contrario usa autenticación Windows.
 
@@ -57,7 +57,7 @@ uv run --project codigo jupyter lab
 
 No uses únicamente `uv run --with jupyter jupyter lab`: `--with jupyter` agrega Jupyter, pero fuera del proyecto no instala por sí solo SQLAlchemy, pandas, seaborn, scikit-learn y las demás librerías del análisis.
 
-La variable `RUN_GRID_SEARCH` controla el costo del ajuste:
+La variable `RUN_GRID_SEARCH` controla el costo del ajuste. La última celda valida el esquema real, carga un staging temporal y publica los perfiles en `bi.PerfilCluster` dentro de una transacción; Power BI consume después la vista segmentada.
 
 - `True`: ejecuta la búsqueda completa de 18 configuraciones con validación cruzada de 3 particiones.
 - `False`: usa los hiperparámetros ya validados para una demostración más rápida.

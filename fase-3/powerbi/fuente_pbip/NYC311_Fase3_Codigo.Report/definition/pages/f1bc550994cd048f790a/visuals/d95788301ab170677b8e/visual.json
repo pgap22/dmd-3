@@ -3,9 +3,9 @@
   "name": "d95788301ab170677b8e",
   "position": {
     "x": 642,
-    "y": 738,
+    "y": 725,
     "width": 590,
-    "height": 310,
+    "height": 325,
     "z": 1000,
     "tabOrder": 0
   },
@@ -22,7 +22,7 @@
                     "value": "SEGMENTACIÓN DE CASOS (K-MEANS)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -36,7 +36,7 @@
                     "value": "",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -47,10 +47,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Población modelada: 480 perfiles de alta recurrencia (>= 100 casos) agrupados por agencia, tipo y distrito.",
+                    "value": "• Población modelada: 481 perfiles de alta recurrencia (>= 100 casos) agrupados por agencia, tipo y distrito, sobre el rango disponible enero–julio de 2026.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -61,10 +61,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Clúster 1 — Resolución ágil: 899,050 casos (69.5%), mediana 129 min (~2.1 h). Flujo estándar continuo.",
+                    "value": "• Clúster 1 — Resolución ágil: 910,529 casos (69.4%), mediana 129 min (~2.2 h). Flujo estándar continuo.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -75,10 +75,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Clúster 2 — Resolución prolongada: 351,275 casos (27.2%), mediana 11,354 min (~7.9 días).",
+                    "value": "• Clúster 2 — Resolución prolongada: 358,005 casos (27.3%), mediana 11,241 min (~7.8 días).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -89,10 +89,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Clúster 3 — Rezago crítico: 29,467 casos (2.3%), mediana 20,522 min (~14.2 días), 82.7% sin resolver.",
+                    "value": "• Clúster 3 — Rezago crítico: 29,621 casos (2.3%), mediana 21,277 min (~14.8 días), 81.7% sin duración observada.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -103,10 +103,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Integridad de datos: 14,024 solicitudes (1.08%) fuera de perfil K-Means conservadas explícitamente.",
+                    "value": "• Integridad de datos: 14,310 solicitudes (1.09%) fuera de perfil K-Means conservadas explícitamente.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }

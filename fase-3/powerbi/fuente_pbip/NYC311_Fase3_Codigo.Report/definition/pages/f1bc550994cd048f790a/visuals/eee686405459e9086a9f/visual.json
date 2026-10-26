@@ -3,9 +3,9 @@
   "name": "eee686405459e9086a9f",
   "position": {
     "x": 34,
-    "y": 72,
+    "y": 62,
     "width": 1820,
-    "height": 30,
+    "height": 26,
     "z": 1000,
     "tabOrder": 0
   },
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Integración operativa de los 480 perfiles K-Means y reglas del Árbol CART para priorizar capacidad y mejorar el servicio ciudadano.",
+                    "value": "Integración operativa de los 481 perfiles K-Means y reglas del Árbol CART para priorizar capacidad y mejorar el servicio ciudadano.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#526477",
                       "fontWeight": "normal"
                     }

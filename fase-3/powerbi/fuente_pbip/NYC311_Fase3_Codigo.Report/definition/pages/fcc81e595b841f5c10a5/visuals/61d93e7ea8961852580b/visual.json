@@ -3,9 +3,9 @@
   "name": "61d93e7ea8961852580b",
   "position": {
     "x": 32,
-    "y": 350,
-    "width": 660,
-    "height": 690,
+    "y": 345,
+    "width": 640,
+    "height": 700,
     "z": 0,
     "tabOrder": 0
   },
@@ -23,11 +23,11 @@
                       "Entity": "bi vw_solicitudes_segmentadas"
                     }
                   },
-                  "Property": "mes"
+                  "Property": "nombre_mes"
                 }
               },
-              "queryRef": "bi vw_solicitudes_segmentadas.mes",
-              "nativeQueryRef": "mes",
+              "queryRef": "bi vw_solicitudes_segmentadas.nombre_mes",
+              "nativeQueryRef": "nombre_mes",
               "active": true
             }
           ]
@@ -79,7 +79,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tendencia mensual de solicitudes · recuento (abril–julio 2026)'"
+                  "Value": "'Tendencia mensual de solicitudes · recuento'"
                 }
               }
             },

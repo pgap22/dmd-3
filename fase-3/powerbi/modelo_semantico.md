@@ -20,6 +20,6 @@
 | `cluster_nombre` | segmentador | tres grupos F2 o `Sin perfil K-Means` |
 | `es_segmentado` | cobertura | bit 1/0 |
 | `modelo_version` | trazabilidad | versión y ventana del modelo |
-| `mes`, `anio` | tendencia | periodo abril–julio 2026 |
+| `mes`, `anio` | tendencia y selector | rango disponible enero–julio 2026; meses con registros |
 
 No crear relaciones muchos-a-muchos por `agency`, `complaint_type` o `borough` en forma independiente. Para la demo académica se puede consumir la vista desnormalizada como una tabla única, documentando que conserva el linaje del DW.

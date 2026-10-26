@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "c6e9ca243b6be38bc812",
   "position": {
-    "x": 564,
-    "y": 118,
-    "width": 350,
-    "height": 78,
+    "x": 1127,
+    "y": 95,
+    "width": 400,
+    "height": 105,
     "z": 0,
     "tabOrder": 0
   },
@@ -42,7 +42,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Clúster K-Means (480 perfiles)'"
+                  "Value": "'Clúster K-Means (481 perfiles)'"
                 }
               }
             },

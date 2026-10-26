@@ -3,9 +3,9 @@
   "name": "223e8bb61b82819202bb",
   "position": {
     "x": 32,
-    "y": 24,
+    "y": 20,
     "width": 1500,
-    "height": 44,
+    "height": 40,
     "z": 1000,
     "tabOrder": 0
   },
@@ -22,7 +22,7 @@
                     "value": "NYC311 | Panorama de atención ciudadana",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "30px",
+                      "fontSize": "28px",
                       "color": "#12304A",
                       "fontWeight": "bold"
                     }

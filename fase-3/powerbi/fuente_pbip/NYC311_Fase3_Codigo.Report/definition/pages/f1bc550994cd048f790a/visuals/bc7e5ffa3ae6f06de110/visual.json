@@ -3,9 +3,9 @@
   "name": "bc7e5ffa3ae6f06de110",
   "position": {
     "x": 32,
-    "y": 738,
+    "y": 725,
     "width": 590,
-    "height": 310,
+    "height": 325,
     "z": 1000,
     "tabOrder": 0
   },
@@ -22,7 +22,7 @@
                     "value": "PRIORIZACIÓN TEMPRANA (ÁRBOL CART)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -36,7 +36,7 @@
                     "value": "",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -50,7 +50,7 @@
                     "value": "• Objetivo operativo: Detectar tempranamente solicitudes con alto riesgo de demora al momento de ingreso.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -61,10 +61,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Precisión histórica en prueba: Recall 95.15% (detección de demora alta) | ROC-AUC: 0.952 | F1: 78.37%.",
+                    "value": "• Referencia del experimento F2 original (prueba abril–julio 2026): Recall 95.15% | ROC-AUC: 0.952 | F1: 78.37%.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -78,7 +78,7 @@
                     "value": "• Factores de alerta: Agencia ejecutora, tipo de queja, distrito, canal y día/mes de recepción.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -89,10 +89,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Matriz de prueba: 58,549 demoras detectadas oportunamente vs. 2,982 falsos negativos.",
+                    "value": "• Matriz de prueba histórica: 58,549 demoras detectadas oportunamente vs. 2,982 falsos negativos.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }
@@ -103,10 +103,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Uso práctico: Semáforo preventivo en mesa de entrada para asignación prioritaria de cuadrillas.",
+                    "value": "• Uso práctico: Semáforo preventivo en mesa de entrada para asignación prioritaria de cuadrillas; no es una predicción dinámica del slicer.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "14px",
                       "color": "#12304A",
                       "fontWeight": "normal"
                     }

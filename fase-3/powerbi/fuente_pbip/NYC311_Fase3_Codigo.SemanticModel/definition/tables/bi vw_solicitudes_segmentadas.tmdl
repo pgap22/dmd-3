@@ -5,7 +5,7 @@ table 'bi vw_solicitudes_segmentadas'
 		dataType: int64
 		formatString: 0
 		lineageTag: 8e5fc613-e808-4927-840a-b5f23fd7287d
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: codigo_solicitud
 
 		annotation SummarizationSetBy = Automatic
@@ -54,7 +54,7 @@ table 'bi vw_solicitudes_segmentadas'
 		dataType: int64
 		formatString: 0
 		lineageTag: de943bc7-c24e-416b-bcf8-023e67b83e46
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: anio
 
 		annotation SummarizationSetBy = Automatic
@@ -63,7 +63,7 @@ table 'bi vw_solicitudes_segmentadas'
 		dataType: int64
 		formatString: 0
 		lineageTag: 7ed2b9da-cda0-4d2c-98a0-246bd8633664
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: mes
 
 		annotation SummarizationSetBy = Automatic
@@ -72,7 +72,7 @@ table 'bi vw_solicitudes_segmentadas'
 		dataType: int64
 		formatString: 0
 		lineageTag: 0caff2c6-ea98-44a3-a7d8-561b7edc8b1b
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: dia_semana
 
 		annotation SummarizationSetBy = Automatic
@@ -90,7 +90,7 @@ table 'bi vw_solicitudes_segmentadas'
 		dataType: int64
 		formatString: 0
 		lineageTag: e8a9f7bf-cc97-4edf-be56-f8d6ab275baa
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: demora_alta
 
 		annotation SummarizationSetBy = Automatic
@@ -119,7 +119,7 @@ table 'bi vw_solicitudes_segmentadas'
 		dataType: int64
 		formatString: 0
 		lineageTag: df9597d2-4782-4109-bd13-956f597d6d22
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: cluster_id_original
 
 		annotation SummarizationSetBy = Automatic
@@ -247,31 +247,72 @@ table 'bi vw_solicitudes_segmentadas'
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	measure 'Solicitudes distintas' = DISTINCTCOUNT('bi vw_solicitudes_segmentadas'[codigo_solicitud])
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha = DATE('bi vw_solicitudes_segmentadas'[anio], 'bi vw_solicitudes_segmentadas'[mes], 1)
+		dataType: dateTime
+		formatString: yyyy-mm
+		lineageTag: a38b8123-579c-48b4-82ab-001122334455
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column nombre_mes = FORMAT(DATE('bi vw_solicitudes_segmentadas'[anio], 'bi vw_solicitudes_segmentadas'[mes], 1), "MMMM")
+		dataType: string
+		lineageTag: 5c3d2e4f-6a7b-8c9d-0e1f-2a3b4c5d6e7f
+		summarizeBy: none
+		sortByColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Jerarquía de fechas'
+		lineageTag: 6d4e3f5a-7b8c-9d0e-1f2a-3b4c5d6e7f8a
+
+		level Año
+			lineageTag: 7e5f4a6b-8c9d-0e1f-2a3b-4c5d6e7f8a9b
+			column: anio
+
+		level Mes
+			lineageTag: 8f6a5b7c-9d0e-1f2a-3b4c-5d6e7f8a9b0c
+			column: nombre_mes
+
+	measure 'Solicitudes distintas' = COALESCE(DISTINCTCOUNT('bi vw_solicitudes_segmentadas'[codigo_solicitud]), 0)
 		formatString: #,##0
 
-	measure 'Solicitudes con tiempo' = CALCULATE([Solicitudes distintas], NOT ISBLANK('bi vw_solicitudes_segmentadas'[minutos_resolucion]))
+	measure 'Solicitudes con tiempo' = COALESCE(CALCULATE([Solicitudes distintas], NOT ISBLANK('bi vw_solicitudes_segmentadas'[minutos_resolucion])), 0)
 		formatString: #,##0
 
-	measure 'Solicitudes sin duración' = CALCULATE([Solicitudes distintas], ISBLANK('bi vw_solicitudes_segmentadas'[minutos_resolucion]))
+	measure 'Solicitudes sin duración' = COALESCE(CALCULATE([Solicitudes distintas], ISBLANK('bi vw_solicitudes_segmentadas'[minutos_resolucion])), 0)
 		formatString: #,##0
 
-	measure 'Solicitudes con demora alta' = COALESCE(SUM('bi vw_solicitudes_segmentadas'[demora_alta]), 0)
+	measure 'Solicitudes con demora alta' = COALESCE(CALCULATE([Solicitudes distintas], 'bi vw_solicitudes_segmentadas'[demora_alta] = 1), 0)
 		formatString: #,##0
 
-	measure 'Tasa demora alta' = DIVIDE([Solicitudes con demora alta], [Solicitudes con tiempo])
+	measure 'Tasa demora alta' = DIVIDE([Solicitudes con demora alta], [Solicitudes con tiempo], 0.0)
 		formatString: 0.0%
 
 	measure 'Mediana minutos observados' = MEDIAN('bi vw_solicitudes_segmentadas'[minutos_resolucion])
 		formatString: #,##0
 
-	measure 'Solicitudes segmentadas' = CALCULATE([Solicitudes distintas], 'bi vw_solicitudes_segmentadas'[es_segmentado] = TRUE)
+	measure 'Solicitudes segmentadas' = COALESCE(CALCULATE([Solicitudes distintas], 'bi vw_solicitudes_segmentadas'[es_segmentado] = TRUE), 0)
 		formatString: #,##0
 
-	measure 'Solicitudes fuera de perfil' = CALCULATE([Solicitudes distintas], 'bi vw_solicitudes_segmentadas'[es_segmentado] = FALSE)
+	measure 'Solicitudes fuera de perfil' = COALESCE(CALCULATE([Solicitudes distintas], 'bi vw_solicitudes_segmentadas'[es_segmentado] = FALSE), 0)
 		formatString: #,##0
 
-	measure 'Porcentaje segmentado' = DIVIDE([Solicitudes segmentadas], [Solicitudes distintas])
+	measure 'Porcentaje segmentado' = DIVIDE([Solicitudes segmentadas], [Solicitudes distintas], 0.0)
 		formatString: 0.0%
 
 	partition 'bi vw_solicitudes_segmentadas' = m
