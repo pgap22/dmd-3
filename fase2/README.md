@@ -1,6 +1,6 @@
 # Fase 2 — Minería de datos NYC311
 
-Este repositorio contiene la entrega final de la Fase 2. La raíz se dejó deliberadamente corta: aquí están el informe, la presentación y los notebooks; todo el material de apoyo quedó archivado en `tmp/`.
+Este repositorio contiene la entrega final de la Fase 2. La raíz se dejó deliberadamente corta: aquí están el informe, la presentación y los notebooks; el material de apoyo queda fuera del paquete final.
 
 ## Entregables
 
@@ -32,9 +32,9 @@ La recomendación principal es usar el árbol como filtro de priorización con r
 
 ## Cómo ejecutar el notebook
 
-El notebook fuente consulta por defecto SQL Server `DW_NYC311`, vista `mining.vw_dataset_fase2`, usando autenticación Windows. El snapshot `resultados.csv` queda como respaldo reproducible y solo se activa de forma explícita con `DMD_FASE2_SOURCE=csv`.
+El notebook fuente consulta únicamente SQL Server `DW_NYC311`, vista `mining.vw_dataset_fase2`, usando autenticación Windows. El período del notebook queda fijado a abril–julio de 2026 para mantener el corte académico validado.
 
-Para la conexión local se necesita el controlador ODBC de Microsoft para SQL Server. El notebook detecta ODBC Driver 18 o 17 y usa `localhost`/`DW_NYC311` por defecto. Se pueden cambiar `DMD_SQL_SERVER`, `DMD_SQL_DATABASE` y `DMD_SQL_ENCRYPT`; si se definen `DB_USER` y `DB_PASSWORD`, usa autenticación SQL. El filtro por defecto es abril–julio de 2026, para conservar las cifras académicas validadas; la vista completa puede contener otros períodos.
+Para la conexión local se necesita el controlador ODBC de Microsoft para SQL Server. El notebook detecta ODBC Driver 18 o 17 y usa `localhost`/`DW_NYC311`. Si se definen `DB_USER` y `DB_PASSWORD`, usa autenticación SQL; de lo contrario usa autenticación Windows.
 
 Para una reproducción local se requiere Python 3.11 o superior y `uv`. Desde `dmd-3/fase2` ejecuta:
 
@@ -57,7 +57,7 @@ uv run --project codigo jupyter lab
 
 No uses únicamente `uv run --with jupyter jupyter lab`: `--with jupyter` agrega Jupyter, pero fuera del proyecto no instala por sí solo SQLAlchemy, pandas, seaborn, scikit-learn y las demás librerías del análisis.
 
-Para ejecutar con el snapshot local, define `DMD_FASE2_SOURCE=csv` antes de abrir Jupyter. En Google Colab se puede definir esa variable, subir el notebook y `resultados.csv`, y luego ejecutar todas las celdas. La variable `RUN_GRID_SEARCH` controla el costo del ajuste:
+La variable `RUN_GRID_SEARCH` controla el costo del ajuste:
 
 - `True`: ejecuta la búsqueda completa de 18 configuraciones con validación cruzada de 3 particiones.
 - `False`: usa los hiperparámetros ya validados para una demostración más rápida.
@@ -91,4 +91,4 @@ La última diapositiva del archivo editable incluye respuestas sugeridas para pr
     └── sql/            vista analítica de minería
 ```
 
-El notebook ejecutado conserva la evidencia histórica del snapshot. La fuente canónica para nuevas ejecuciones es SQL Server; el CSV no alimenta Power BI y solo sirve para reproducir offline el período validado.
+El notebook ejecutado conserva una evidencia histórica separada. La fuente única del notebook fuente es SQL Server.
