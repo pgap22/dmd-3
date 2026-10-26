@@ -29,6 +29,7 @@ qa/screenshots/
 .chart-data-*/
 .codex-finalizer/
 *.pbix~
+fase-3/powerbi/NYC311_Fase3_Actualizado.pbix
 *.before_*.pbix
 *.accidental
 
