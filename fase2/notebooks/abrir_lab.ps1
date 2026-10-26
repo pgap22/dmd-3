@@ -6,8 +6,8 @@ param(
 $ErrorActionPreference = 'Stop'
 
 $repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
-$projectDir = Join-Path $repoRoot 'tmp\codigo'
-$environmentDir = Join-Path $repoRoot 'tmp\entorno\notebook'
+$projectDir = Join-Path $repoRoot 'codigo'
+$environmentDir = Join-Path $projectDir '.venv'
 $projectFile = Join-Path $projectDir 'pyproject.toml'
 
 if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
@@ -30,10 +30,13 @@ import matplotlib
 import seaborn
 import sklearn
 import nbformat
+import sqlalchemy
+import pyodbc
 print("ENTORNO_OK")
 print(f"pandas={pandas.__version__}")
 print(f"scikit-learn={sklearn.__version__}")
 print(f"seaborn={seaborn.__version__}")
+print(f"sqlalchemy={sqlalchemy.__version__}")
 '@
         & uv run --project $projectDir python -c $check
     }

@@ -32,15 +32,17 @@ La recomendación principal es usar el árbol como filtro de priorización con r
 
 ## Cómo ejecutar el notebook
 
-El CSV completo está en `tmp/data/resultados.csv`. El notebook lo detecta automáticamente desde esa ubicación, desde la raíz o desde `/content` en Google Colab.
+El notebook fuente consulta por defecto SQL Server `DW_NYC311`, vista `mining.vw_dataset_fase2`, usando autenticación Windows. El snapshot `resultados.csv` queda como respaldo reproducible y solo se activa de forma explícita con `DMD_FASE2_SOURCE=csv`.
 
-Para una reproducción local se requiere Python 3.11 o superior y `uv`. Desde la raíz del repositorio ejecuta:
+Para la conexión local se necesita el controlador ODBC de Microsoft para SQL Server. El notebook detecta ODBC Driver 18 o 17 y usa `localhost`/`DW_NYC311` por defecto. Se pueden cambiar `DMD_SQL_SERVER`, `DMD_SQL_DATABASE` y `DMD_SQL_ENCRYPT`; si se definen `DB_USER` y `DB_PASSWORD`, usa autenticación SQL. El filtro por defecto es abril–julio de 2026, para conservar las cifras académicas validadas; la vista completa puede contener otros períodos.
+
+Para una reproducción local se requiere Python 3.11 o superior y `uv`. Desde `dmd-3/fase2` ejecuta:
 
 ```powershell
 .\notebooks\abrir_lab.ps1
 ```
 
-El lanzador encuentra `tmp/codigo/pyproject.toml`, instala todas las dependencias en `tmp/entorno/notebook` y abre Jupyter Lab desde la raíz. Para comprobar el entorno sin abrir Jupyter:
+El lanzador encuentra `codigo/pyproject.toml`, instala las dependencias en `codigo/.venv` y abre Jupyter Lab desde `dmd-3/fase2`. Para comprobar el entorno sin abrir Jupyter:
 
 ```powershell
 .\notebooks\abrir_lab.ps1 -Verificar
@@ -49,13 +51,13 @@ El lanzador encuentra `tmp/codigo/pyproject.toml`, instala todas las dependencia
 El resultado correcto comienza con `ENTORNO_OK`. El comando manual equivalente es:
 
 ```powershell
-$env:UV_PROJECT_ENVIRONMENT = "$PWD\tmp\entorno\notebook"
-uv run --project tmp/codigo jupyter lab
+$env:UV_PROJECT_ENVIRONMENT = "$PWD\codigo\.venv"
+uv run --project codigo jupyter lab
 ```
 
-No uses únicamente `uv run --with jupyter jupyter lab`: `--with jupyter` agrega Jupyter, pero fuera del proyecto no instala por sí solo pandas, seaborn, scikit-learn y las demás librerías del análisis.
+No uses únicamente `uv run --with jupyter jupyter lab`: `--with jupyter` agrega Jupyter, pero fuera del proyecto no instala por sí solo SQLAlchemy, pandas, seaborn, scikit-learn y las demás librerías del análisis.
 
-En Google Colab basta con subir el notebook y `resultados.csv`, y luego ejecutar todas las celdas. La variable `RUN_GRID_SEARCH` controla el costo del ajuste:
+Para ejecutar con el snapshot local, define `DMD_FASE2_SOURCE=csv` antes de abrir Jupyter. En Google Colab se puede definir esa variable, subir el notebook y `resultados.csv`, y luego ejecutar todas las celdas. La variable `RUN_GRID_SEARCH` controla el costo del ajuste:
 
 - `True`: ejecuta la búsqueda completa de 18 configuraciones con validación cruzada de 3 particiones.
 - `False`: usa los hiperparámetros ya validados para una demostración más rápida.
@@ -84,12 +86,9 @@ La última diapositiva del archivo editable incluye respuestas sugeridas para pr
 │   ├── fase2_dmd_nyc311.ipynb
 │   ├── fase2_dmd_nyc311_ejecutado.ipynb
 │   └── abrir_lab.ps1
-└── tmp/
-    ├── data/          CSV completo
-    ├── referencias/   premisa, Fase 1 y borradores anteriores
-    ├── codigo/        vista SQL y configuración reproducible
-    ├── entorno/       entorno y cachés locales
-    └── qa/            renders y pruebas de control de calidad
+└── codigo/
+    ├── pyproject.toml  dependencias reproducibles
+    └── sql/            vista analítica de minería
 ```
 
-`tmp/` conserva el material auxiliar para que nada se pierda, pero no es necesario recorrerlo para leer o defender la entrega. En Git se versionan solamente el CSV, la vista SQL y la configuración necesaria; entornos, renders y controles locales quedan excluidos. El CSV se almacena mediante Git LFS.
+El notebook ejecutado conserva la evidencia histórica del snapshot. La fuente canónica para nuevas ejecuciones es SQL Server; el CSV no alimenta Power BI y solo sirve para reproducir offline el período validado.
