@@ -1,0 +1,132 @@
+<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9e70bc16-3124-48b5-8bf7-77dbf8d965d2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim PerfilCluster</ID>
+  <Name>Dim PerfilCluster</Name>
+  <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+  <LastProcessed>0001-01-01T08:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="2e4bcf61-01cf-4bb3-b28e-0bf6b820b0aa">
+    <DataSourceViewID>DW NYC311</DataSourceViewID>
+  </Source>
+  <UnknownMember>Hidden</UnknownMember>
+  <UnknownMemberName>Sin perfil K-Means</UnknownMemberName>
+  <ErrorConfiguration dwd:design-time-name="0e6b1c62-9cc1-4e22-949b-fcc3c5ab47f1">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="f5f062d4-4e68-4e72-a9c8-2f1b5ab296b4">
+      <ID>Perfil Cluster Key</ID>
+      <Name>Perfil Cluster Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f45d3276-4f9f-46d9-8a45-9a0fa2f9f16e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6f8cebd7-d6bc-4ce5-bc74-97bcdd872bd7">
+            <TableID>bi_vw_perfil_cluster_olap</TableID>
+            <ColumnID>perfil_cluster_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship><AttributeID>Cluster ID</AttributeID><Name>Cluster ID</Name></AttributeRelationship>
+        <AttributeRelationship><AttributeID>Cluster Nombre</AttributeID><Name>Cluster Nombre</Name></AttributeRelationship>
+        <AttributeRelationship><AttributeID>Perfil</AttributeID><Name>Perfil</Name></AttributeRelationship>
+        <AttributeRelationship><AttributeID>Agency</AttributeID><Name>Agency</Name></AttributeRelationship>
+        <AttributeRelationship><AttributeID>Complaint Type</AttributeID><Name>Complaint Type</Name></AttributeRelationship>
+        <AttributeRelationship><AttributeID>Borough</AttributeID><Name>Borough</Name></AttributeRelationship>
+        <AttributeRelationship><AttributeID>Modelo Version</AttributeID><Name>Modelo Version</Name></AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0e10eb75-0772-4165-8904-03c47fe040c9">
+      <ID>Cluster ID</ID>
+      <Name>Cluster ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8f918a75-7e30-44a2-9de8-98bd786958e2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding"><TableID>bi_vw_perfil_cluster_olap</TableID><ColumnID>cluster_id_original</ColumnID></Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5c82ac2a-77e2-45c7-9f0b-5f72fc9d9864">
+      <ID>Cluster Nombre</ID>
+      <Name>Cluster Nombre</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f7e80b27-14ae-437c-b173-352a017ac923">
+          <DataType>WChar</DataType><DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding"><TableID>bi_vw_perfil_cluster_olap</TableID><ColumnID>cluster_nombre</ColumnID></Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4e054c2c-b9e8-4c53-9dbe-1e9e397f34ad">
+      <ID>Perfil</ID>
+      <Name>Perfil</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="57c9e3db-8e13-46cf-ae9e-91f8def2eb04">
+          <DataType>WChar</DataType><DataSize>600</DataSize>
+          <Source xsi:type="ColumnBinding"><TableID>bi_vw_perfil_cluster_olap</TableID><ColumnID>perfil_nombre</ColumnID></Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a4cbba6c-0a68-4e39-bd4a-6da693caac23">
+      <ID>Agency</ID>
+      <Name>Agency</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e4a83f12-f7d5-4a2d-ad8f-68b4a3b6e3ef">
+          <DataType>WChar</DataType><DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding"><TableID>bi_vw_perfil_cluster_olap</TableID><ColumnID>agency</ColumnID></Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5da07fa0-803d-4fbf-8321-e6618b2c5a77">
+      <ID>Complaint Type</ID>
+      <Name>Complaint Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="76a7312a-3b7a-4865-81ef-5b7ec89426ac">
+          <DataType>WChar</DataType><DataSize>500</DataSize>
+          <Source xsi:type="ColumnBinding"><TableID>bi_vw_perfil_cluster_olap</TableID><ColumnID>complaint_type</ColumnID></Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9fb1eb8d-34b9-4f07-855b-9a7c1a0fd4e8">
+      <ID>Borough</ID>
+      <Name>Borough</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="203ea4f7-5e2c-4d04-a8a4-9d569bf1c8bb">
+          <DataType>WChar</DataType><DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding"><TableID>bi_vw_perfil_cluster_olap</TableID><ColumnID>borough</ColumnID></Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bc7c1e16-29cf-45a8-9d30-7a9c97e5c67a">
+      <ID>Modelo Version</ID>
+      <Name>Modelo Version</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1aecde8e-3fca-4c1d-8b16-d8f9206c1a83">
+          <DataType>WChar</DataType><DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding"><TableID>bi_vw_perfil_cluster_olap</TableID><ColumnID>modelo_version</ColumnID></Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

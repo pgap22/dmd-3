@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "f201068fcbd38257d038",
+  "position": {
+    "x": 632,
+    "y": 225,
+    "width": 320,
+    "height": 130,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Solicitud"
+                    }
+                  },
+                  "Property": "Cobertura de tiempo observado Value"
+                }
+              },
+              "queryRef": "Fact Solicitud.Cobertura de tiempo observado Value",
+              "nativeQueryRef": "Cobertura de tiempo observado Value"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'KPI SSAS · cobertura (0–1)'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

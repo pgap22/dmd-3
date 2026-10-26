@@ -42,7 +42,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Período (Fecha)'"
+                  "Value": "'Período mensual'"
                 }
               }
             },

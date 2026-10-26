@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "olap"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "591870b5-ab3b-4889-9b93-a046addbb97d"
+  }
+}

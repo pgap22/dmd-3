@@ -8,4 +8,4 @@ Esta carpeta contiene únicamente los artefactos de Fase 3 que se pueden entrega
 - `powerbi/fuente_pbip/`: proyecto PBIP/PBIR/TMDL que permite revisar el modelo y las medidas.
 - `guion_defensa.md`: apoyo de exposición, no parte del informe académico.
 
-El PBIX conserva el linaje SQL hacia `DW_NYC311` y la vista `bi.vw_solicitudes_segmentadas`. Mantiene el universo de 1,293,816 solicitudes, los 480 perfiles K-Means y la categoría explícita de 14,024 solicitudes fuera de perfil. Los costos y el ROI se presentan como escenarios, no como ahorros ya realizados.
+El PBIX conserva el linaje SQL hacia `DW_NYC311` y la vista `bi.vw_solicitudes_segmentadas`. La publicación BI actual reconcilia 1,312,465 solicitudes, 481 perfiles K-Means, 1,298,155 solicitudes segmentadas y 14,310 solicitudes fuera de perfil. El experimento F2 original se conserva como referencia histórica: 480 perfiles en el snapshot abril–julio y métricas del árbol evaluadas en prueba. Los costos y el ROI se presentan como escenarios, no como ahorros ya realizados.

@@ -13,7 +13,7 @@
           <State>Unprocessed</State>
           <Source xsi:type="DsvTableBinding" dwd:design-time-name="473d9347-e431-422a-b970-4291f105fe0c">
             <DataSourceViewID>DW NYC311</DataSourceViewID>
-            <TableID>dw_FactSolicitud</TableID>
+            <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>

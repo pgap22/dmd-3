@@ -1,0 +1,142 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 339.98900139508231,
+            "y": 372.099160705674
+          },
+          "nodeIndex": "Fact Solicitud",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 343.24354586794573,
+            "y": -50
+          },
+          "nodeIndex": "Dim Agencia",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 629.88548136170107,
+            "y": 714.22986577936354
+          },
+          "nodeIndex": "Dim Canal",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 629.98333390573271,
+            "y": 431.80771009178233
+          },
+          "nodeIndex": "Dim Estado",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 397.31860687013568
+          },
+          "nodeIndex": "Dim Geografia",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 629.90840045727941,
+            "y": 76.761816222724974
+          },
+          "nodeIndex": "Dim PerfilCluster",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 339.97571100463142,
+            "y": 795.78991627353344
+          },
+          "nodeIndex": "Dim Problema",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 53.742583917728155,
+            "y": 7.6281365445390747
+          },
+          "nodeIndex": "Fecha Cierre",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.075225765574885,
+            "y": 561.5379766142787
+          },
+          "nodeIndex": "Fecha Creacion",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 863.98333390573271,
+            "y": 438.89495813676672
+          },
+          "nodeIndex": "Measures",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

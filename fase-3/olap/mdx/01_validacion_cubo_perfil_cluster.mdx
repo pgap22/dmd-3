@@ -1,0 +1,25 @@
+/*
+    Validación oral de la integración Fase 2 -> SSAS multidimensional.
+    Cubo: DW NYC311
+*/
+
+/* Cobertura por nombre de segmento. La suma debe ser 1,312,465. */
+SELECT
+    {[Measures].[Fact Solicitud Count]} ON COLUMNS,
+    {[Dim PerfilCluster].[Cluster Nombre].Members} ON ROWS
+FROM [DW NYC311];
+
+/* Misma cobertura por ID lógico del clúster. -1 representa sin perfil. */
+SELECT
+    {[Measures].[Fact Solicitud Count]} ON COLUMNS,
+    {[Dim PerfilCluster].[Cluster ID].Members} ON ROWS
+FROM [DW NYC311];
+
+/* Cruce operativo para demostrar que la dimensión filtra una dimensión existente. */
+SELECT
+    {[Measures].[Fact Solicitud Count]} ON COLUMNS,
+    NON EMPTY CrossJoin(
+        {[Dim PerfilCluster].[Cluster Nombre].Members},
+        {[Dim Agencia].[Agency].Members}
+    ) ON ROWS
+FROM [DW NYC311];

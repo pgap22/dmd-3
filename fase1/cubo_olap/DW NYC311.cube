@@ -143,6 +143,37 @@
         </Attribute>
       </Attributes>
     </Dimension>
+    <Dimension dwd:design-time-name="e7901b96-b3d8-4a42-af9f-78f496d1a7ad">
+      <ID>Dim PerfilCluster</ID>
+      <Name>Dim PerfilCluster</Name>
+      <DimensionID>Dim PerfilCluster</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f2a3bd1d-16e7-42a5-8e74-817a1bb3e9d1">
+          <AttributeID>Perfil Cluster Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="08ca3a94-d0c6-4a7d-9fa8-5c4a7b7f4968">
+          <AttributeID>Cluster ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6e44b68c-ff79-4607-b01f-52c0f07d4f7a">
+          <AttributeID>Cluster Nombre</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f8a9c2d2-b3a7-47fd-a0e3-4cdbba2c55d0">
+          <AttributeID>Perfil</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c1f58e11-0b06-4f47-8a16-38f124c54b52">
+          <AttributeID>Agency</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="801d1cc8-7998-465c-bf19-1e92581b5d32">
+          <AttributeID>Complaint Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="46f43e67-3e00-4cad-95b2-33a6f4c80358">
+          <AttributeID>Borough</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1d9f25f2-1e5e-4b9a-8e01-92c4af72e4a5">
+          <AttributeID>Modelo Version</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
   </Dimensions>
   <MeasureGroups>
     <MeasureGroup dwd:design-time-name="c3d468a6-3554-4433-8c78-e7d51becec29">
@@ -159,7 +190,7 @@
           <Source dwd:design-time-name="46cce211-7d09-4e3a-b382-999f2695254d">
             <DataType>BigInt</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="61ee697f-8148-46dd-8f6b-605f2aacdb12">
-              <TableID>dw_FactSolicitud</TableID>
+              <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
               <ColumnID>codigo_solicitud</ColumnID>
             </Source>
           </Source>
@@ -170,7 +201,7 @@
           <Source dwd:design-time-name="31a3dd5b-5e4f-4725-be09-05f54b1f3420">
             <DataType>Integer</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="a1ef9008-8ad8-4418-a24b-b6967024e0fd">
-              <TableID>dw_FactSolicitud</TableID>
+              <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
               <ColumnID>minutos_resolucion</ColumnID>
             </Source>
           </Source>
@@ -181,7 +212,7 @@
           <Source dwd:design-time-name="38a96229-435e-4974-bdfa-b8ac666ee54b">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="1b5648e3-9351-476b-bd97-8828037c3144">
-              <TableID>dw_FactSolicitud</TableID>
+              <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
               <ColumnID>latitude</ColumnID>
             </Source>
           </Source>
@@ -192,7 +223,7 @@
           <Source dwd:design-time-name="f9c92f3f-9ca2-4f7c-a630-e8e32dc28117">
             <DataType>Double</DataType>
             <Source xsi:type="ColumnBinding" dwd:design-time-name="e81d1e82-da63-4763-8f58-30205c11f911">
-              <TableID>dw_FactSolicitud</TableID>
+              <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
               <ColumnID>longitude</ColumnID>
             </Source>
           </Source>
@@ -205,7 +236,20 @@
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
             <Source xsi:type="RowBinding" dwd:design-time-name="319b6c8c-1994-40f3-8c2b-94b44fd3ee6d">
-              <TableID>dw_FactSolicitud</TableID>
+              <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a6f94d2c-7b15-4e83-9c61-5d0e8f2a4b77">
+          <ID>Solicitudes con tiempo</ID>
+          <Name>Solicitudes con tiempo</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="b7e05e3d-8c26-4f94-ad72-6e1f9a3b5c88">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c8f16f4e-9d37-40a5-be83-7f2a0b4c6d99">
+              <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
+              <ColumnID>minutos_resolucion</ColumnID>
             </Source>
           </Source>
         </Measure>
@@ -222,7 +266,7 @@
                 <KeyColumn dwd:design-time-name="69520f5e-d538-45d8-a67e-e217ea4d0731">
                   <DataType>Integer</DataType>
                   <Source xsi:type="ColumnBinding" dwd:design-time-name="15aaf127-3c24-4cd4-9768-0928a0a8d17b">
-                    <TableID>dw_FactSolicitud</TableID>
+                    <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
                     <ColumnID>fecha_creacion_key</ColumnID>
                   </Source>
                 </KeyColumn>
@@ -241,7 +285,7 @@
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
                   <Source xsi:type="ColumnBinding" dwd:design-time-name="d934acbf-1ec1-44f4-9bf2-42608c6562e4">
-                    <TableID>dw_FactSolicitud</TableID>
+                    <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
                     <ColumnID>canal_key</ColumnID>
                   </Source>
                 </KeyColumn>
@@ -260,7 +304,7 @@
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
                   <Source xsi:type="ColumnBinding" dwd:design-time-name="85ca3ce7-a8f7-422d-81e7-f493ba2baa51">
-                    <TableID>dw_FactSolicitud</TableID>
+                    <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
                     <ColumnID>geografia_key</ColumnID>
                   </Source>
                 </KeyColumn>
@@ -278,7 +322,7 @@
                 <KeyColumn dwd:design-time-name="f62aa5fd-98f8-417d-a649-ed7e9063237a">
                   <DataType>Integer</DataType>
                   <Source xsi:type="ColumnBinding" dwd:design-time-name="71411fb6-476b-45fe-990a-42b9c6dcf82f">
-                    <TableID>dw_FactSolicitud</TableID>
+                    <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
                     <ColumnID>problema_key</ColumnID>
                   </Source>
                 </KeyColumn>
@@ -296,7 +340,7 @@
                 <KeyColumn dwd:design-time-name="5ae716eb-2c85-4eee-b15c-a4dbbbd1e5ef">
                   <DataType>Integer</DataType>
                   <Source xsi:type="ColumnBinding" dwd:design-time-name="af2ecffe-803c-45b6-a57b-2c93ae911e5f">
-                    <TableID>dw_FactSolicitud</TableID>
+                    <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
                     <ColumnID>agencia_key</ColumnID>
                   </Source>
                 </KeyColumn>
@@ -314,7 +358,7 @@
                 <KeyColumn dwd:design-time-name="3bd0e2e2-f075-4905-9889-5619140f9d9a">
                   <DataType>Integer</DataType>
                   <Source xsi:type="ColumnBinding" dwd:design-time-name="092aa639-9854-4f95-8ffd-5f26041cdb22">
-                    <TableID>dw_FactSolicitud</TableID>
+                    <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
                     <ColumnID>estado_key</ColumnID>
                   </Source>
                 </KeyColumn>
@@ -333,8 +377,27 @@
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
                   <Source xsi:type="ColumnBinding" dwd:design-time-name="76ffccff-1b15-4c4a-ac56-071a8a93646b">
-                    <TableID>dw_FactSolicitud</TableID>
+                    <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
                     <ColumnID>fecha_cierre_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="91ac0ff0-8df2-47bf-991d-b97ffcb77cf4">
+          <CubeDimensionID>Dim PerfilCluster</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a9a2f98b-913b-45ef-90ba-6b77d651da89">
+              <AttributeID>Perfil Cluster Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f2393cb1-e10b-46ca-8f7b-83d8401d78f4">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="08f3c463-37dd-4c82-94ad-a1c45b33f92c">
+                    <TableID>bi_vw_fact_solicitud_perfil_cluster</TableID>
+                    <ColumnID>perfil_cluster_key</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
@@ -346,6 +409,19 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
+  <Kpis>
+    <Kpi dwd:design-time-name="d9a27b5f-0e48-41b6-cf94-8a3b1d5e7f00">
+      <ID>Cobertura Tiempo Observado</ID>
+      <Name>Cobertura de tiempo observado</Name>
+      <Description>Porcentaje de solicitudes con minutos de resolución observados. Meta analítica de diseño: 95%; no representa un SLA contractual.</Description>
+      <DisplayFolder>KPIs operativos</DisplayFolder>
+      <AssociatedMeasureGroupID>Fact Solicitud</AssociatedMeasureGroupID>
+      <Value>IIF([Measures].[Fact Solicitud Count] = 0, NULL, [Measures].[Solicitudes con tiempo] / [Measures].[Fact Solicitud Count])</Value>
+      <Goal>0.95</Goal>
+      <Status>IIF([Measures].[Fact Solicitud Count] = 0, 0, IIF([Measures].[Solicitudes con tiempo] / [Measures].[Fact Solicitud Count] &gt;= 0.95, 1, -1))</Status>
+      <StatusGraphic>Traffic Light</StatusGraphic>
+    </Kpi>
+  </Kpis>
   <Source dwd:design-time-name="5f829881-9fb3-4281-a456-2403c3cf453c">
     <DataSourceViewID>DW NYC311</DataSourceViewID>
   </Source>

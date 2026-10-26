@@ -36,3 +36,8 @@ fase-3/powerbi/NYC311_Fase3_Actualizado.pbix
 # Secretos locales
 .env
 *.secrets.*
+
+# Volcados locales de revisión y paquetes de trabajo
+/*_dump.txt
+/tmp_*.txt
+/fase-3.zip

@@ -43,6 +43,10 @@
       <Name>Dim Estado.dim</Name>
       <FullPath>Dim Estado.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Dim PerfilCluster.dim</Name>
+      <FullPath>Dim PerfilCluster.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
@@ -64,14 +68,14 @@
           <ConfigurationSetting>
             <Id>NYC</Id>
             <Name>NYC</Name>
-            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=192.168.122.1;Persist Security Info=True;Password=;User ID=;Initial Catalog=DW_NYC311</Value>
+            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=(local);Integrated Security=SSPI;Initial Catalog=DW_NYC311</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
             <Id>NYC</Id>
             <Name>NYC</Name>
-            <Value xsi:type="xsd:int">1</Value>
+            <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
       </Options>

@@ -203,6 +203,51 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
+            <xs:element name="bi_vw_perfil_cluster_olap" msprop:DbTableName="vw_perfil_cluster_olap" msprop:FriendlyName="PerfilCluster (OLAP)" msprop:TableType="View" msprop:DbSchemaName="bi" msprop:design-time-name="a7dca7bf-4c86-4a74-9b7b-735f8c5d6b0a">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="perfil_cluster_key" msprop:FriendlyName="perfil_cluster_key" msprop:DbColumnName="perfil_cluster_key" msprop:design-time-name="a4d6ed6c-9f3d-4f1d-9bb1-fcfd9b1b7d01" type="xs:int" />
+                  <xs:element name="agency" msprop:FriendlyName="agency" msprop:DbColumnName="agency" msprop:design-time-name="d1de2da3-0ee4-405b-8e25-8f7d6ad0b4a0">
+                    <xs:simpleType><xs:restriction base="xs:string"><xs:maxLength value="100" /></xs:restriction></xs:simpleType>
+                  </xs:element>
+                  <xs:element name="complaint_type" msprop:FriendlyName="complaint_type" msprop:DbColumnName="complaint_type" msprop:design-time-name="58a8f82d-343d-44d0-9bd8-4e7de2dfdce4">
+                    <xs:simpleType><xs:restriction base="xs:string"><xs:maxLength value="500" /></xs:restriction></xs:simpleType>
+                  </xs:element>
+                  <xs:element name="borough" msprop:FriendlyName="borough" msprop:DbColumnName="borough" msprop:design-time-name="06bb8a40-2bf6-4d33-9713-8a9af1a7b745">
+                    <xs:simpleType><xs:restriction base="xs:string"><xs:maxLength value="200" /></xs:restriction></xs:simpleType>
+                  </xs:element>
+                  <xs:element name="cluster_id_original" msprop:FriendlyName="cluster_id_original" msprop:DbColumnName="cluster_id_original" msprop:design-time-name="a62b6102-fc7b-4b34-bbb7-cd7f91e34dd7" type="xs:int" />
+                  <xs:element name="cluster_nombre" msprop:FriendlyName="cluster_nombre" msprop:DbColumnName="cluster_nombre" msprop:design-time-name="ebfd2ca5-9d95-41de-90d0-20a20fae6d7f">
+                    <xs:simpleType><xs:restriction base="xs:string"><xs:maxLength value="120" /></xs:restriction></xs:simpleType>
+                  </xs:element>
+                  <xs:element name="perfil_nombre" msprop:FriendlyName="perfil_nombre" msprop:DbColumnName="perfil_nombre" msprop:design-time-name="a9ff2376-f2b0-46ac-9ff8-96057b646d37">
+                    <xs:simpleType><xs:restriction base="xs:string"><xs:maxLength value="600" /></xs:restriction></xs:simpleType>
+                  </xs:element>
+                  <xs:element name="modelo_version" msprop:FriendlyName="modelo_version" msprop:DbColumnName="modelo_version" msprop:design-time-name="c9c99d1c-1d51-42d3-9a6d-cdf2ec08672a">
+                    <xs:simpleType><xs:restriction base="xs:string"><xs:maxLength value="120" /></xs:restriction></xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="bi_vw_fact_solicitud_perfil_cluster" msprop:DbTableName="vw_fact_solicitud_perfil_cluster" msprop:FriendlyName="FactSolicitud + PerfilCluster" msprop:TableType="View" msprop:DbSchemaName="bi" msprop:design-time-name="30bd78bd-8687-4b34-b3f2-cba74e8f2b08">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="solicitud_key" msprop:FriendlyName="solicitud_key" msprop:DbColumnName="solicitud_key" msprop:design-time-name="8f6fb0d4-31e1-4d32-9b49-89b8e2c0fdf5" type="xs:long" />
+                  <xs:element name="codigo_solicitud" msprop:FriendlyName="codigo_solicitud" msprop:DbColumnName="codigo_solicitud" msprop:design-time-name="61db0bf2-bd46-4649-88d3-bbbf2572f462" type="xs:long" />
+                  <xs:element name="fecha_creacion_key" msprop:FriendlyName="fecha_creacion_key" msprop:DbColumnName="fecha_creacion_key" msprop:design-time-name="4de4e177-dcc0-49a1-aa47-919cf9c20d80" type="xs:int" />
+                  <xs:element name="fecha_cierre_key" msprop:FriendlyName="fecha_cierre_key" msprop:DbColumnName="fecha_cierre_key" msprop:design-time-name="e3e3f136-41ad-48b7-baf5-7c16e111f356" type="xs:int" minOccurs="0" />
+                  <xs:element name="agencia_key" msprop:FriendlyName="agencia_key" msprop:DbColumnName="agencia_key" msprop:design-time-name="850779c0-9a05-47e7-b7cb-a4cda1a1211f" type="xs:int" />
+                  <xs:element name="problema_key" msprop:FriendlyName="problema_key" msprop:DbColumnName="problema_key" msprop:design-time-name="3dc5d1cd-7d38-4f7c-a310-67a3a9ef3e87" type="xs:int" />
+                  <xs:element name="geografia_key" msprop:FriendlyName="geografia_key" msprop:DbColumnName="geografia_key" msprop:design-time-name="3bab0e00-0e2c-4cbb-99b1-94beb731f0cf" type="xs:int" minOccurs="0" />
+                  <xs:element name="estado_key" msprop:FriendlyName="estado_key" msprop:DbColumnName="estado_key" msprop:design-time-name="d36ae938-7c10-4d1b-9f19-b13d150ca65a" type="xs:int" />
+                  <xs:element name="canal_key" msprop:FriendlyName="canal_key" msprop:DbColumnName="canal_key" msprop:design-time-name="9d4ccf85-7653-4f45-80da-0a3f0c61fd5a" type="xs:int" minOccurs="0" />
+                  <xs:element name="minutos_resolucion" msprop:FriendlyName="minutos_resolucion" msprop:DbColumnName="minutos_resolucion" msprop:design-time-name="8de54848-1dab-475d-9b6f-25a3e301c92f" type="xs:int" minOccurs="0" />
+                  <xs:element name="latitude" msprop:FriendlyName="latitude" msprop:DbColumnName="latitude" msprop:design-time-name="2015d522-6dbd-4a75-9cb1-5cbd37d88c51" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="longitude" msprop:FriendlyName="longitude" msprop:DbColumnName="longitude" msprop:design-time-name="13f314dd-398c-468c-91d1-634dacf4d3f0" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="perfil_cluster_key" msprop:FriendlyName="perfil_cluster_key" msprop:DbColumnName="perfil_cluster_key" msprop:design-time-name="dd55e03f-9aa4-4711-88e3-3fefcde56b13" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
             <xs:element name="etl_Ejecucion" msprop:DbTableName="Ejecucion" msprop:FriendlyName="Ejecucion" msprop:TableType="Table" msprop:DbSchemaName="etl" msprop:design-time-name="30df0042-ccea-405f-a782-7e0137157ad3">
               <xs:complexType>
                 <xs:sequence>
@@ -531,6 +576,14 @@
           <xs:selector xpath=".//dw_FactSolicitud" />
           <xs:field xpath="solicitud_key" />
         </xs:unique>
+        <xs:unique name="bi_vw_perfil_cluster_olap_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//bi_vw_perfil_cluster_olap" />
+          <xs:field xpath="perfil_cluster_key" />
+        </xs:unique>
+        <xs:unique name="bi_vw_fact_solicitud_perfil_cluster_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//bi_vw_fact_solicitud_perfil_cluster" />
+          <xs:field xpath="solicitud_key" />
+        </xs:unique>
         <xs:unique name="etl_Ejecucion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
           <xs:selector xpath=".//etl_Ejecucion" />
           <xs:field xpath="run_id" />
@@ -570,6 +623,10 @@
         <xs:keyref name="FK_FactSolicitud_FechaCreacion" refer="dw_DimFecha_Constraint1">
           <xs:selector xpath=".//dw_FactSolicitud" />
           <xs:field xpath="fecha_creacion_key" />
+        </xs:keyref>
+        <xs:keyref name="FK_Bridge_PerfilCluster" refer="bi_vw_perfil_cluster_olap_Constraint1">
+          <xs:selector xpath=".//bi_vw_fact_solicitud_perfil_cluster" />
+          <xs:field xpath="perfil_cluster_key" />
         </xs:keyref>
       </xs:element>
     </xs:schema>

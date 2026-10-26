@@ -1,0 +1,6 @@
+{
+  "version": "2.0",
+  "connectionString": "Data Source=(local);Initial Catalog=CuboFase1;Cube=\"DW NYC311\"",
+  "isMultiDimentional": true,
+  "connectionType": "analysisServicesDatabaseLive"
+}

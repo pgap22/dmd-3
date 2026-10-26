@@ -247,18 +247,6 @@ table 'bi vw_solicitudes_segmentadas'
 
 		annotation UnderlyingDateTimeDataType = Date
 
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-		annotation SummarizationSetBy = Automatic
-
 	column fecha = DATE('bi vw_solicitudes_segmentadas'[anio], 'bi vw_solicitudes_segmentadas'[mes], 1)
 		dataType: dateTime
 		formatString: yyyy-mm

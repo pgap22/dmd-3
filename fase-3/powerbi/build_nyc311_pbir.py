@@ -265,12 +265,12 @@ def page_panorama() -> tuple[dict, list[tuple[str, dict]]]:
             ),
             textbox(
                 "p1-subtitle",
-                "Volumen, tiempos observados y distribución de solicitudes · Análisis interactivo por período y dimensiones operativas.",
+                "Universo disponible: enero y abril–julio de 2026 · Análisis interactivo por período mensual y dimensiones operativas.",
                 34, 62, 1800, 26,
                 size_px=14, color="#526477"
             ),
             # Barra de segmentadores con 105px de alto y espacio ampliado
-            slicer("p1-fecha", 32, 95, 345, 105, "fecha", "Período (Fecha)"),
+            slicer("p1-fecha", 32, 95, 345, 105, "fecha", "Período mensual"),
             slicer("p1-borough", 397, 95, 345, 105, "borough", "Distrito (Borough)"),
             slicer("p1-agency", 762, 95, 345, 105, "agency", "Agencia ejecutora"),
             slicer("p1-cluster", 1127, 95, 400, 105, "cluster_nombre", "Clúster K-Means (481 perfiles)"),
@@ -322,12 +322,12 @@ def page_diagnostico() -> tuple[dict, list[tuple[str, dict]]]:
             ),
             textbox(
                 "p2-subtitle",
-                "Diagnóstico operativo de tiempos de atención por agencia y distrito. Duraciones no observadas preservadas sin sesgo analítico.",
+                "Diagnóstico operativo por agencia y distrito · Universo: enero y abril–julio de 2026 · Duraciones no observadas preservadas sin sesgo analítico.",
                 34, 62, 1820, 26,
                 size_px=14, color="#526477"
             ),
             # Barra de segmentadores con 105px de alto
-            slicer("p2-fecha", 32, 95, 345, 105, "fecha", "Período (Fecha)"),
+            slicer("p2-fecha", 32, 95, 345, 105, "fecha", "Período mensual"),
             slicer("p2-agency", 397, 95, 345, 105, "agency", "Agencia ejecutora"),
             slicer("p2-borough", 762, 95, 345, 105, "borough", "Distrito (Borough)"),
             slicer("p2-cluster", 1127, 95, 400, 105, "cluster_nombre", "Clúster K-Means (481 perfiles)"),
@@ -389,12 +389,12 @@ def page_valor() -> tuple[dict, list[tuple[str, dict]]]:
             ),
             textbox(
                 "p3-subtitle",
-                "Integración operativa de los 481 perfiles K-Means y reglas del Árbol CART para priorizar capacidad y mejorar el servicio ciudadano.",
+                "Integración operativa de 481 perfiles K-Means y reglas del Árbol CART · Universo: enero y abril–julio de 2026.",
                 34, 62, 1820, 26,
                 size_px=14, color="#526477"
             ),
             # Barra de segmentadores con 105px de alto
-            slicer("p3-fecha", 32, 95, 345, 105, "fecha", "Período (Fecha)"),
+            slicer("p3-fecha", 32, 95, 345, 105, "fecha", "Período mensual"),
             slicer("p3-cluster", 397, 95, 420, 105, "cluster_nombre", "Clúster K-Means (481 perfiles)"),
             slicer("p3-borough", 837, 95, 330, 105, "borough", "Distrito (Borough)"),
             slicer("p3-agency", 1187, 95, 330, 105, "agency", "Agencia ejecutora"),
@@ -430,7 +430,7 @@ def page_valor() -> tuple[dict, list[tuple[str, dict]]]:
             ),
             textbox(
                 "p3-kmeans-box",
-                "SEGMENTACIÓN DE CASOS (K-MEANS)\n\n• Población modelada: 481 perfiles de alta recurrencia (>= 100 casos) agrupados por agencia, tipo y distrito, sobre el rango disponible enero–julio de 2026.\n• Clúster 1 — Resolución ágil: 910,529 casos (69.4%), mediana 129 min (~2.2 h). Flujo estándar continuo.\n• Clúster 2 — Resolución prolongada: 358,005 casos (27.3%), mediana 11,241 min (~7.8 días).\n• Clúster 3 — Rezago crítico: 29,621 casos (2.3%), mediana 21,277 min (~14.8 días), 81.7% sin duración observada.\n• Integridad de datos: 14,310 solicitudes (1.09%) fuera de perfil K-Means conservadas explícitamente.",
+                "SEGMENTACIÓN DE CASOS (K-MEANS)\n\n• Población modelada: 481 perfiles de alta recurrencia (>= 100 casos) agrupados por agencia, tipo y distrito, sobre el rango disponible de enero y abril–julio de 2026.\n• Clúster 1 — Resolución ágil: 910,529 casos (69.4%), mediana 129 min (~2.2 h). Flujo estándar continuo.\n• Clúster 2 — Resolución prolongada: 358,005 casos (27.3%), mediana 11,241 min (~7.8 días).\n• Clúster 3 — Rezago crítico: 29,621 casos (2.3%), mediana 21,277 min (~14.8 días), 81.7% sin duración observada.\n• Integridad de datos: 14,310 solicitudes (1.09%) fuera de perfil K-Means conservadas explícitamente.",
                 642, 725, 590, 325,
                 size_px=14, color="#12304A"
             ),
@@ -579,6 +579,7 @@ def write_page(page: dict, visuals: list[tuple[str, dict]]) -> None:
 
 def package_final_pbix() -> Path:
     candidates = [
+        ROOT / "fuente_pbip" / "NYC311_Fase3_Codigo.pbix",
         ROOT / "NYC311_Fase3_Actualizado.pbix",
         ROOT / "NYC311_Fase3_Final.pbix",
         ROOT / "NYC311_Fase3_Codigo.pbix",
